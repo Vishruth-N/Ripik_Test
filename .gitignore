@@ -1,0 +1,24 @@
+# Data
+input/
+drive/
+logs/
+DataFiles/
+# User
+config/user.yaml
+
+# Environment
+venv/
+.vscode/
+.env
+/env
+
+# Cache
+**/*.pyc
+.DS_Store
+
+# Debugging
+optimus/debugger/
+
+# Notebooks
+notebooks/
+**/*.ipynb

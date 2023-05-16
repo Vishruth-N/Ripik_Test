@@ -1,0 +1,60 @@
+# CRITICAL PARAMETERS
+# Max dependancy levels
+max_dependancy_levels: 1
+
+# Pulling demand months
+pulling_months:
+  - "m1_crit"
+  - "m1_std"
+  - "m2_crit"
+  - "m2_std"
+  - "m3_crit"
+  - "m3_std"
+
+# Objective function default coefficients
+objective_coeffs:
+  total_completion_time: !!float 0.0
+  cross_block_penalty: !!float 1000.0
+  waiting_time: !!float 0.0
+  production_by_time: !!float 10.0
+  absolute_produce: !!float 0.0
+  due_date_penalty: !!float 1.0
+
+# Crit multiplier
+crit_multiplier: !!float 2
+
+# Sequencing parameters
+scheduling_params:
+  # Info spreading mode
+  info_spreading: !!str "horizontal"
+
+  # Feedback threshold
+  feedback_threshold: !!float 0.1
+
+  # Take machine feedback
+  use_machine_feedback: !!bool true
+
+  # Next operation to be prioritised if same resource of preceding operation
+  bind_nextop: !!bool true
+  bind_resource_type: !!str "block"
+
+# inventory checks
+rmpm_inventory_check: !!bool false
+
+# Any batch can only consume one batch
+consume_only_one: !!bool false
+
+# Sunday downtime
+is_sunday_off: !!bool false
+
+# IR0 Changeover B constraint
+IR0_changeoverB: !!bool false
+
+# Holdtime constraint
+holdtime: !!bool true
+
+# MTS demand buffer
+mts_demand_buffer: 0.5
+
+# DEBUG PARAMETERS
+debug_dir: "input/sunpharma_baska/may23/"

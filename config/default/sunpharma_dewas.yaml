@@ -1,0 +1,45 @@
+# CRITICAL PARAMETERS
+# Max dependancy levels
+max_dependancy_levels: 5
+
+# Pulling demand months
+pulling_months:
+  - "m1_crit"
+  - "m1_std"
+  - "m2_crit"
+  - "m2_std"
+  - "m3_crit"
+  - "m3_std"
+
+# Objective function default coefficients
+objective_coeffs:
+  total_completion_time: !!float 0.0
+  cross_block_penalty: !!float 1000.0
+  waiting_time: !!float 0.0
+  production_by_time: !!float 10.0
+  absolute_produce: !!float 0.0
+  due_date_penalty: !!float 1.0
+
+# Crit multiplier
+crit_multiplier: !!float 2
+
+# Take machine feedback
+take_machine_feedback: !!bool true
+
+# Next operation to be prioritised if same resource of preceding operation
+nextop_sameres_binded: !!bool true
+
+# Any batch can only consume one batch
+consume_only_one: !!bool false
+
+# Sunday downtime
+is_sunday_off: !!bool false
+
+# IR0 Changeover B constraint
+IR0_changeoverB: !!bool true
+
+# MTS demand buffer
+mts_demand_buffer: 0.5
+
+# DEBUG PARAMETERS
+debug_dir: "input/sunpharma_dewas/may23/"

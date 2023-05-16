@@ -1,0 +1,87 @@
+################## Design params #####################
+# output periods (null is considered as 0 in start time and inf in end time)
+periods:
+  "M1": [0, 720]
+  "M2": [720, 1440]
+  "M3": [1440, 2160]
+  "W1": [0, 168]
+  "W2": [168, 336]
+  "W3": [336, 504]
+  "W4": [504, 672]
+  "25": [0, 600]
+  "31": [0, 744]
+  "All": [0, null]
+
+
+################## Algo params #####################
+# preschedule mode
+preschedule_mode: !!str "feedforward"
+
+# LP time limit (in seconds)
+lp_time_limit: !!int 100
+
+# Sequencing parameters
+scheduling_params:
+  # Info spreading mode
+  info_spreading: !!str "horizontal"
+
+  # Feedback threshold
+  feedback_threshold: !!float 0.1
+
+  # Take machine feedback
+  use_machine_feedback: !!bool true
+
+  # Next operation to be prioritised if same resource of preceding operation
+  bind_nextop: !!bool false
+  bind_resource_type: !!str "block"
+
+# inventory checks
+rmpm_inventory_check: !!bool True
+intm_inventory_check: !!bool True
+
+# Minimum consumption for production
+min_sfg_consumption_for_production: 0.0
+
+################## Critical user params #####################
+# Max dependancy levels
+max_dependancy_levels: !!int 6
+
+# Pulling demand months in high to low priority
+pulling_months:
+  - "m1_crit"
+  - "m1_std"
+  - "m2_crit"
+  - "m2_std"
+  - "m3_crit"
+  - "m3_std"
+
+# Any batch can only consume one batch
+consume_only_one: !!bool false
+
+# Sunday downtime
+is_sunday_off: !!bool false
+
+# IR0 Changeover B constraint
+IR0_changeoverB: !!bool false
+
+# Holdtime constraint
+holdtime: !!bool false
+
+################## May be overridden by the user #####################
+# Objective function coefficients
+objective_coeffs:
+  total_completion_time: !!float 1.0
+  cross_block_penalty: !!float 1.0
+  waiting_time: !!float 1.0
+  production_by_time: !!float 1.0
+  absolute_produce: !!float 1.0
+  due_date_penalty: !!float 1.0
+
+# crit multiplier as month priority increases
+crit_multiplier: !!float 1.5
+
+# MTS demand buffer
+mts_demand_buffer: 0.0
+
+# optimization depth
+inner_num_iterations: !!int 5

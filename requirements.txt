@@ -1,0 +1,10 @@
+pandas
+pyxlsb
+openpyxl
+xlrd
+pulp
+sortedcontainers
+uuid
+pyyaml
+ordered-set
+python-dotenv

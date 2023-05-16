@@ -1,0 +1,31 @@
+version: 1
+incremental: False
+disable_existing_loggers : False
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)s - %(lineno)d - %(levelname)s - %(message)s'
+  minimal:
+    format: '%(levelname)s - %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: WARNING
+    formatter: simple
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: simple
+    filename: "logs/dev.log"
+  progress:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: minimal
+    filename: "logs/progress.log"
+    mode: w+
+loggers:
+  progressLogger:
+    level: INFO
+    handlers: [progress]
+root:
+  level: DEBUG
+  handlers: [console,file]
